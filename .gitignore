@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+dist/
+.env
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# macOS
+.DS_Store
+
+# Coverage
+coverage/
+
+# VSCode settings
+.vscode/
+
+# Build tools
+lib/
+build/
+
+# Test output
+jest-test-results.json
+
+# Package lock files (optional)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Logs
+logs/
+*.log
+
+# IDEs
+.idea/
+*.sublime-workspace
+*.sublime-project

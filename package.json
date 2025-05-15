@@ -1,0 +1,59 @@
+{
+  "name": "geo-utils",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdeshpa2/geo-utils.git"
+  },
+  "keywords": [
+    "haversine",
+    "distance",
+    "geolocation",
+    "geospatial",
+    "location",
+    "typescript",
+    "kilometers",
+    "miles",
+    "earth-distance",
+    "coordinates",
+    "lat-lon",
+    "math",
+    "travel",
+    "utility",
+    "geo-utils",
+    "gps",
+    "npm-package",
+    "npm-module",
+    "npm-library",
+    "open-source",
+    "distance-calculator",
+    "geo",
+    "geometry",
+    "ts",
+    "es6"
+  ],
+  "author": "Chaitanya Deshpande <cdeshpa2@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/cdeshpa2/geo-utils#readme",
+  "bugs": {
+    "url": "https://github.com/cdeshpa2/geo-utils/issues"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "description": "A lightweight, blazing-fast TypeScript library for calculating distances (Haversine) and geospatial math with support for kilometers and miles.",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.3",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}
