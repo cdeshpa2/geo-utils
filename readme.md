@@ -18,11 +18,11 @@ yarn add geo-utils
 ⸻
 
 🔧 Features
-	•	🌐 Haversine distance calculation
-	•	📏 Supports kilometers and miles
-	•	✅ Written in TypeScript with full typings
-	•	🧪 Unit-tested with Jest
-	•	🚀 Tiny, fast, zero-dependency utility
+ • 🌐 Haversine distance calculation
+ • 📏 Supports kilometers and miles
+ • ✅ Written in TypeScript with full typings
+ • 🧪 Unit-tested with Jest
+ • 🚀 Tiny, fast, zero-dependency utility
 
 ⸻
 
@@ -42,7 +42,7 @@ const distanceInKm = haversineDistance(lat1, lon1, lat2, lon2, 'km');
 console.log(`Distance: ${distanceInKm.toFixed(2)} km`);
 
 // Distance in miles
-const distanceInMiles = haversineDistance(lat1, lon1, lat2, lon2, 'mi');
+const distanceInMiles = haversineDistance(lat1, lon1, lat2, lon2, 'miles');
 console.log(`Distance: ${distanceInMiles.toFixed(2)} miles`);
 
 
@@ -53,12 +53,12 @@ console.log(`Distance: ${distanceInMiles.toFixed(2)} miles`);
 
 haversineDistance(lat1, lon1, lat2, lon2, unit?)
 
-Parameter	Type	Description
-lat1	number	Latitude of point 1
-lon1	number	Longitude of point 1
-lat2	number	Latitude of point 2
-lon2	number	Longitude of point 2
-unit	string	'km' for kilometers (default), 'mi' for miles
+Parameter Type Description
+lat1 number Latitude of point 1
+lon1 number Longitude of point 1
+lat2 number Latitude of point 2
+lon2 number Longitude of point 2
+unit string 'km' for kilometers (default), 'mi' for miles
 
 Returns
 
@@ -101,10 +101,10 @@ npm run build
 ⸻
 
 🛠 Tech Stack
-	•	TypeScript
-	•	Jest
-	•	Node.js
-	•	npm/yarn
+ • TypeScript
+ • Jest
+ • Node.js
+ • npm/yarn
 
 ⸻
 
@@ -121,5 +121,5 @@ PRs and stars are welcome! For major changes, please open an issue first to disc
 ⸻
 
 🔗 Links
-	•	npm
-	•	GitHub
+ • npm
+ • GitHub
