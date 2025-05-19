@@ -1,49 +1,40 @@
-# 🌍 geo-utils
+# geo-utils
 
-**A lightweight, blazing-fast TypeScript library for calculating distances between two coordinates using the Haversine formula. Supports both kilometers and miles.**
-
----
+A lightweight TypeScript utility library for calculating distance between two coordinates using the **Haversine formula**, with support for **kilometers** and **miles**.
 
 ## 📦 Installation
 
 ```bash
-# Using npm
-npm install geo-utils
-
-# Using yarn
-yarn add geo-utils
+npm install @cdeshpande/geo-utils
+# or using yarn
+yarn add @cdeshpande/geo-utils
 
 
-
-⸻
-
-🔧 Features
- • 🌐 Haversine distance calculation
- • 📏 Supports kilometers and miles
- • ✅ Written in TypeScript with full typings
- • 🧪 Unit-tested with Jest
- • 🚀 Tiny, fast, zero-dependency utility
 
 ⸻
 
 🚀 Usage
 
-// ESM or TypeScript
-import { haversineDistance } from 'geo-utils';
+import { haversineDistance } from '@cdeshpande/geo-utils';
 
-const lat1 = 40.7128;
-const lon1 = -74.0060; // New York City
+// Define coordinates
+const start = {
+  latitude: 30.849635,
+  longitude: -83.24559
+};
 
-const lat2 = 34.0522;
-const lon2 = -118.2437; // Los Angeles
+const end = {
+  latitude: 27.950575,
+  longitude: -82.457178
+};
 
-// Distance in kilometers
-const distanceInKm = haversineDistance(lat1, lon1, lat2, lon2, 'km');
-console.log(`Distance: ${distanceInKm.toFixed(2)} km`);
+// Calculate distance in kilometers (default)
+console.log(haversineDistance(start.latitude, start.longitude, end.latitude, end.longitude)); 
+// → 403.28 (km)
 
-// Distance in miles
-const distanceInMiles = haversineDistance(lat1, lon1, lat2, lon2, 'miles');
-console.log(`Distance: ${distanceInMiles.toFixed(2)} miles`);
+// Calculate distance in miles
+console.log(haversineDistance(start.latitude, start.longitude, end.latitude, end.longitude, 'miles')); 
+// → 250.47 (miles)
 
 
 
@@ -53,46 +44,47 @@ console.log(`Distance: ${distanceInMiles.toFixed(2)} miles`);
 
 haversineDistance(lat1, lon1, lat2, lon2, unit?)
 
-Parameter Type Description
-lat1 number Latitude of point 1
-lon1 number Longitude of point 1
-lat2 number Latitude of point 2
-lon2 number Longitude of point 2
-unit string 'km' for kilometers (default), 'mi' for miles
+Param Type Required Description
+lat1 number ✅ Latitude of the first point
+lon1 number ✅ Longitude of the first point
+lat2 number ✅ Latitude of the second point
+lon2 number ✅ Longitude of the second point
+unit 'km' | 'miles' ❌ Unit of distance (default is 'km')
 
-Returns
+🔒 Validations
+ • Throws TypeError if latitude/longitude is not a number.
+ • Throws RangeError if coordinates are out of bounds.
+ • Throws Error if unit is not 'km' or 'miles'.
 
-number // Distance in chosen unit
+⸻
+
+✅ Examples
+
+haversineDistance(0, 0, 0, 1); // ~111.19 km
+haversineDistance(0, 0, 0, 1, 'miles'); // ~69.03 miles
+
+// Invalid examples (will throw)
+haversineDistance('a' as any, 0, 0, 0); // TypeError
+haversineDistance(91, 0, 0, 0); // RangeError
+haversineDistance(0, 0, 0, 0, 'lightyears' as any); // Error
 
 
 
 ⸻
 
-⚠️ Common Issues
+🛠 Development
 
-❌ SyntaxError: Cannot use import statement outside a module
+Clone the repo and install dependencies:
 
-Make sure your project supports ES modules or TypeScript. For Jest testing, ensure you have:
+git clone https://github.com/cdeshpa2/geo-utils.git
+cd geo-utils
+npm install
 
-// jest.config.js
-module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-};
-
-
-
-⸻
-
-🧪 Running Tests
+Run tests:
 
 npm run test
 
-
-
-⸻
-
-📦 Build for Publishing
+Build the library:
 
 npm run build
 
@@ -100,26 +92,21 @@ npm run build
 
 ⸻
 
-🛠 Tech Stack
- • TypeScript
- • Jest
- • Node.js
- • npm/yarn
+🌐 Publishing (for maintainers)
+
+npm login
+npm publish --access public
+
+
 
 ⸻
 
-📄 License
+🧾 License
 
 MIT © Chaitanya Deshpande
 
 ⸻
 
-🙌 Contributing
+🔍 Keywords
 
-PRs and stars are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
-⸻
-
-🔗 Links
- • npm
- • GitHub
+haversine, distance, geo, geolocation, latlon, miles, km, typescript, location, coordinates, earth, utility, npm-library, geo-utils
