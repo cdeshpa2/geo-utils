@@ -3,18 +3,11 @@
 A lightweight TypeScript utility library for calculating distance between two coordinates using the **Haversine formula**, with support for **kilometers** and **miles**.
 
 ## 📦 Installation
-
-```bash
-npm install @cdeshpande/geo-utils
-# or using yarn
-yarn add @cdeshpande/geo-utils
+```npm install @cdeshpande/geo-utils```
 
 
-
-⸻
-
-🚀 Usage
-
+## 🚀 Usage
+```
 import { haversineDistance } from '@cdeshpande/geo-utils';
 
 // Define coordinates
@@ -35,31 +28,30 @@ console.log(haversineDistance(start.latitude, start.longitude, end.latitude, end
 // Calculate distance in miles
 console.log(haversineDistance(start.latitude, start.longitude, end.latitude, end.longitude, 'miles')); 
 // → 250.47 (miles)
+```
 
 
-
-⸻
-
-📘 API
+## 📘 API
 
 haversineDistance(lat1, lon1, lat2, lon2, unit?)
 
 Param Type Required Description
-lat1 number ✅ Latitude of the first point
-lon1 number ✅ Longitude of the first point
-lat2 number ✅ Latitude of the second point
-lon2 number ✅ Longitude of the second point
-unit 'km' | 'miles' ❌ Unit of distance (default is 'km')
+| Param  | Type            | Required | Description                          |
+|--------|-----------------|----------|--------------------------------------|
+| lat1   | `number`        | ✅       | Latitude of the first point          |
+| lon1   | `number`        | ✅       | Longitude of the first point         |
+| lat2   | `number`        | ✅       | Latitude of the second point         |
+| lon2   | `number`        | ✅       | Longitude of the second point        |
+| unit   | `'km' \| 'miles'` | ❌     | Unit of distance (default is `'km'`) |
 
-🔒 Validations
- • Throws TypeError if latitude/longitude is not a number.
- • Throws RangeError if coordinates are out of bounds.
- • Throws Error if unit is not 'km' or 'miles'.
+## 🔒 Validations
+ - Throws `TypeError` if latitude/longitude is not a number.  
+ - Throws `RangeError` if coordinates are out of bounds.  
+ - Throws `Error` if unit is not `'km'` or `'miles'`.  
 
-⸻
 
-✅ Examples
-
+## ✅ Examples
+```
 haversineDistance(0, 0, 0, 1); // ~111.19 km
 haversineDistance(0, 0, 0, 1, 'miles'); // ~69.03 miles
 
@@ -67,46 +59,8 @@ haversineDistance(0, 0, 0, 1, 'miles'); // ~69.03 miles
 haversineDistance('a' as any, 0, 0, 0); // TypeError
 haversineDistance(91, 0, 0, 0); // RangeError
 haversineDistance(0, 0, 0, 0, 'lightyears' as any); // Error
+```
 
-
-
-⸻
-
-🛠 Development
-
-Clone the repo and install dependencies:
-
-git clone https://github.com/cdeshpa2/geo-utils.git
-cd geo-utils
-npm install
-
-Run tests:
-
-npm run test
-
-Build the library:
-
-npm run build
-
-
-
-⸻
-
-🌐 Publishing (for maintainers)
-
-npm login
-npm publish --access public
-
-
-
-⸻
-
-🧾 License
+## 🧾 License
 
 MIT © Chaitanya Deshpande
-
-⸻
-
-🔍 Keywords
-
-haversine, distance, geo, geolocation, latlon, miles, km, typescript, location, coordinates, earth, utility, npm-library, geo-utils
