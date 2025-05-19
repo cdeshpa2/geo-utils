@@ -1,2 +1,2 @@
-export { haversineDistance } from './haversine';
-export { midpoint } from './midpoint';
+export * from './haversine';
+export * from './midpoint';
