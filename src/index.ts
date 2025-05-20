@@ -1,4 +1,3 @@
-import { haversineDistance } from './haversine';
-import { midpoint } from './midpoint';
-
-export { haversineDistance, midpoint };
+export { haversineDistance } from './haversine';
+export { midpoint } from './midpoint';
+export { vincentyDistance } from './vincenty';
