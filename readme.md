@@ -6,6 +6,7 @@ A lightweight and extensible TypeScript utility library for geospatial calculati
 -   📍 Midpoint between two geographic points
 -   🌍 Vincenty distance
 -   🌍 Bearing (also called forward azimuth)
+-   🌍 DestinationPoint — Compute Destination from Distance & Bearing
 
 Supports **kilometers** and **miles**, with built-in input validation.
 
@@ -14,6 +15,8 @@ vincentyDistance calculates the geodesic distance between two geographic coordin
 Calculates the initial bearing (also called forward azimuth) between two geographic coordinates. The result is the angle in degrees from North (0°) to the direction of the destination point, moving along the great-circle path.
 
 Calculates the initial bearing (also called forward azimuth) between two geographic coordinates. The result is the angle in degrees from North (0°) to the direction of the destination point, moving along the great-circle path.
+
+Calculate the destination point given: - a starting latitude/longitude, - a distance (in kilometers or miles), - and a bearing (angle from true north in degrees).
 
 ## 📦 Installation
 
@@ -75,6 +78,26 @@ const bearing = initialBearing(30, -90, 40, -80);
 console.log(`Initial Bearing: ${bearing.toFixed(2)}°`); // → Initial Bearing: 37.23°
 ```
 
+## 🚀 DestinationPoint Usage
+
+```
+import { destinationPoint } from '@cdeshpande/geo-utils';
+
+const start = { latitude: 0, longitude: 0 };
+const distance = 100; // in kilometers
+const bearing = 90;   // due east
+
+const destination = destinationPoint(
+  start.latitude,
+  start.longitude,
+  distance,
+  bearing
+);
+
+console.log(destination);
+// → { latitude: ~0.0, longitude: ~0.899 }
+```
+
 ## 📘 API
 
 ### haversineDistance(lat1: number, lon1: number, lat2: number, lon2: number, unit?: string): number
@@ -113,6 +136,17 @@ console.log(`Initial Bearing: ${bearing.toFixed(2)}°`); // → Initial Bearing:
 | lon1  | `number` | ✅       | Longitude of the first point  |
 | lat2  | `number` | ✅       | Latitude of the second point  |
 | lon2  | `number` | ✅       | Longitude of the second point |
+
+### destinationPoint( lat: number, lon: number, distance: number, bearing: number, unit: 'km' | 'miles'): { latitude: number; longitude: number }
+
+| Param   | Type              | Required | Description                                      |
+| ------- | ----------------- | -------- | ------------------------------------------------ |
+| lat1    | `number`          | ✅       | Latitude of the first point                      |
+| lon1    | `number`          | ✅       | Longitude of the first point                     |
+| lat2    | `number`          | ✅       | Latitude of the second point                     |
+| lon2    | `number`          | ✅       | Longitude of the second point                    |
+| bearing | `number`          | ✅       | Direction to travel (in degrees from true north) |
+| unit    | `'km' \| 'miles'` | ❌       | Unit of distance (default is `'km'`)             |
 
 ## 🔒 Validations
 
