@@ -15,6 +15,9 @@
     },
     "keywords": [
         "haversine",
+        "midpoint",
+        "vincenty",
+        "bearing",
         "distance",
         "geolocation",
         "geospatial",
